@@ -81,33 +81,12 @@
       background-color: var(--ocre);
     }
 
-    .brand-eyebrow {
-      font-family: var(--font-body);
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--marron);
-      opacity: 0.6;
-      margin-bottom: 0.3rem;
-    }
-
-    /* Nombre en rojo como el cartel del local */
-    .brand-name {
-      font-family: var(--font-display);
-      font-size: clamp(2.6rem, 11vw, 3.8rem);
-      color: var(--rojo);
-      line-height: 1;
-      letter-spacing: 0.01em;
-      text-shadow: 2px 2px 0 rgba(165,14,14,.25);
-    }
-
-    .brand-rule {
-      height: 2px;
-      background: var(--azul-elec);
-      margin: 0.8rem auto 0.65rem;
-      width: 60%;
-      opacity: 0.4;
+    .brand-logo {
+      display: block;
+      width: min(88%, 320px);
+      height: auto;
+      margin: 0 auto 0.7rem;
+      filter: drop-shadow(2px 3px 6px rgba(0,0,0,.22));
     }
 
     .brand-sub {
@@ -237,9 +216,7 @@
   <div class="wrapper">
 
     <div class="brand-header">
-      <div class="brand-eyebrow">Pizzería</div>
-      <div class="brand-name">Arrabbiata</div>
-      <div class="brand-rule"></div>
+      <img class="brand-logo" src="https://arrabbiata.com.ar/Uploads/logolindo.png" alt="Arrabbiata Pizza">
       <div class="brand-sub">La mejor pizza de Alberdi</div>
     </div>
 
