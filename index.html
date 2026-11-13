@@ -65,37 +65,59 @@
       animation: aparecer 0.45s ease 0.05s forwards;
     }
 
-    /* ── Header: ocre + borde azul como el nav ── */
+    /* ── Header fotográfico: foto real + trama pop art + logo original ── */
     .brand-header {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      place-items: center;
+      aspect-ratio: 1.5 / 1;
+      padding: 0;
+      overflow: hidden;
       background: var(--ocre);
       border-bottom: 3px solid var(--azul-elec);
       box-shadow: 0 3px 0 var(--azul-elec);
-      padding: 1.6rem 1.5rem 1.4rem;
-      text-align: center;
-      position: relative;
-      /* grilla de azulejos sutil */
-      background-image:
-        linear-gradient(rgba(255,255,255,.09) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.09) 1px, transparent 1px);
-      background-size: 30px 30px;
-      background-color: var(--ocre);
+    }
+
+    .brand-photo {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 54%;
+      filter: saturate(1.18) contrast(1.08) sepia(.08);
+    }
+
+    /* Trama de semitonos sobre la fotografía, sin taparla */
+    .brand-header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background-image: radial-gradient(circle, rgba(112, 35, 16, .48) .85px, transparent 1.25px);
+      background-size: 5px 5px;
+      opacity: .28;
+      mix-blend-mode: multiply;
     }
 
     .brand-logo {
       display: block;
-      width: min(88%, 320px);
+      position: relative;
+      z-index: 1;
+      width: min(82%, 350px);
+      max-height: 78%;
       height: auto;
-      margin: 0 auto 0.7rem;
-      filter: drop-shadow(2px 3px 6px rgba(0,0,0,.22));
+      object-fit: contain;
+      margin: 0;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,.20));
     }
 
-    .brand-sub {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: 0.95rem;
-      color: var(--marron);
-      opacity: 0.7;
-      letter-spacing: 0.05em;
+    @media (max-width: 480px) {
+      .brand-header { aspect-ratio: 1.42 / 1; }
+      .brand-logo { width: 84%; }
     }
 
     /* ── Links ── */
@@ -234,8 +256,8 @@
   <div class="wrapper">
 
     <div class="brand-header">
+      <img class="brand-photo" src="pizza-header.jpg" alt="" aria-hidden="true">
       <img class="brand-logo" src="https://arrabbiata.com.ar/Uploads/logolindo.png" alt="Arrabbiata Pizza">
-      <div class="brand-sub">La mejor pizza de Alberdi</div>
     </div>
 
     <div id="links">
