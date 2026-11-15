@@ -71,7 +71,7 @@
       isolation: isolate;
       display: grid;
       place-items: center;
-      aspect-ratio: 2.4 / 1;
+      aspect-ratio: 3.35 / 1;
       padding: 0;
       overflow: hidden;
       background: var(--ocre);
@@ -107,8 +107,8 @@
       display: block;
       position: relative;
       z-index: 1;
-      width: min(82%, 350px);
-      max-height: 78%;
+      width: min(78%, 350px);
+      max-height: 86%;
       height: auto;
       object-fit: contain;
       margin: 0;
@@ -116,15 +116,17 @@
     }
 
     @media (max-width: 480px) {
-      .brand-header { aspect-ratio: 2.4 / 1; }
-      .brand-logo { width: 84%; }
+      .brand-header { aspect-ratio: 3.35 / 1; }
+      .brand-logo { width: 80%; }
     }
 
     /* ── Links ── */
     #links {
       display: flex;
       flex-direction: column;
-      /* sin gap: bordes colapsados como tabla */
+      gap: 0.55rem;
+      padding: 0.65rem;
+      background: var(--rojo);
     }
 
     .link {
@@ -135,7 +137,7 @@
       text-decoration: none;
       color: var(--marron);
       background: var(--blanco);
-      border-top: 2px solid rgba(204,20,20,.18);
+      border: 2px solid rgba(204,20,20,.18);
       position: relative;
       transition: background 0.12s ease, padding-left 0.12s ease;
       overflow: hidden;
@@ -265,14 +267,14 @@
     /* En pantallas bajas, compactar el conjunto antes de provocar scroll */
     @media (max-height: 850px) and (max-width: 480px) {
       body { padding-top: 8px; padding-bottom: 8px; }
-      .brand-header { aspect-ratio: 2.6 / 1; }
+      .brand-header { aspect-ratio: 3.5 / 1; }
       .link { padding-top: 0.68rem; padding-bottom: 0.68rem; }
       .brand-footer { padding-top: 0.48rem; padding-bottom: 0.5rem; }
       .brand-footer p { letter-spacing: 0.14em; }
     }
 
     @media (max-height: 700px) and (max-width: 480px) {
-      .brand-header { aspect-ratio: 2.8 / 1; }
+      .brand-header { aspect-ratio: 3.7 / 1; }
       .link { padding-top: 0.48rem; padding-bottom: 0.48rem; }
       .link-icon { width: 36px; height: 36px; }
       .brand-footer { padding-top: 0.38rem; padding-bottom: 0.4rem; }
