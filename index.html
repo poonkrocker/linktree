@@ -229,7 +229,7 @@
     /* ── Footer dentro del wrapper ── */
     .brand-footer {
       background: var(--rojo);
-      padding: 0.7rem 1rem;
+      padding: 0.62rem 1rem 0.68rem;
       text-align: center;
     }
     .brand-footer p {
@@ -239,6 +239,14 @@
       text-transform: uppercase;
       color: #fff;
       opacity: 0.9;
+      line-height: 1.35;
+    }
+    .brand-footer .footer-contact {
+      margin-top: 0.08rem;
+      font-size: calc(0.82rem - 1pt);
+      letter-spacing: 0.12em;
+      text-transform: none;
+      opacity: 0.82;
     }
 
     @keyframes aparecer {
@@ -247,7 +255,27 @@
     }
 
     @media (max-width: 480px) {
-      body { padding: 1.5rem 0.85rem 2rem; }
+      body {
+        min-height: 100svh;
+        padding: clamp(8px, 1.5svh, 20px) 0.85rem;
+      }
+      .wrapper { max-height: calc(100svh - 3svh); }
+    }
+
+    /* En pantallas bajas, compactar el conjunto antes de provocar scroll */
+    @media (max-height: 850px) and (max-width: 480px) {
+      body { padding-top: 8px; padding-bottom: 8px; }
+      .brand-header { aspect-ratio: 1.65 / 1; }
+      .link { padding-top: 0.68rem; padding-bottom: 0.68rem; }
+      .brand-footer { padding-top: 0.48rem; padding-bottom: 0.5rem; }
+      .brand-footer p { letter-spacing: 0.14em; }
+    }
+
+    @media (max-height: 700px) and (max-width: 480px) {
+      .brand-header { aspect-ratio: 1.9 / 1; }
+      .link { padding-top: 0.48rem; padding-bottom: 0.48rem; }
+      .link-icon { width: 36px; height: 36px; }
+      .brand-footer { padding-top: 0.38rem; padding-bottom: 0.4rem; }
     }
   </style>
 </head>
@@ -321,6 +349,7 @@
 
     <div class="brand-footer">
       <p>La mejor pizza de Alberdi · Córdoba</p>
+      <p class="footer-contact">27 de abril 798 · 3517548030</p>
     </div>
 
   </div>
