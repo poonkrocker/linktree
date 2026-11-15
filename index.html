@@ -69,10 +69,11 @@
     .brand-header {
       position: relative;
       isolation: isolate;
-      display: grid;
-      place-items: center;
-      aspect-ratio: 3.35 / 1;
-      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 3 / 1;
+      padding: 8px 12px;
       overflow: hidden;
       background: var(--ocre);
       border-bottom: 3px solid var(--azul-elec);
@@ -107,17 +108,20 @@
       display: block;
       position: relative;
       z-index: 1;
-      width: min(78%, 350px);
-      max-height: 86%;
+      width: min(76%, 330px);
+      max-width: 100%;
+      max-height: 100%;
       height: auto;
       object-fit: contain;
-      margin: 0;
+      object-position: center;
+      flex: 0 1 auto;
+      margin: 0 auto;
       filter: drop-shadow(1px 0 0 rgba(240,230,208,.92)) drop-shadow(-1px 0 0 rgba(240,230,208,.92)) drop-shadow(0 1px 0 rgba(240,230,208,.92)) drop-shadow(0 -1px 0 rgba(240,230,208,.92)) drop-shadow(1px 1px 0 rgba(240,230,208,.78)) drop-shadow(-1px -1px 0 rgba(240,230,208,.78)) drop-shadow(0 2px 3px rgba(92,8,8,.38));
     }
 
     @media (max-width: 480px) {
-      .brand-header { aspect-ratio: 3.35 / 1; }
-      .brand-logo { width: 80%; }
+      .brand-header { aspect-ratio: 3 / 1; }
+      .brand-logo { width: min(76%, 330px); }
     }
 
     /* ── Links ── */
@@ -126,7 +130,7 @@
       flex-direction: column;
       gap: 0.55rem;
       padding: 0.65rem;
-      background: var(--rojo);
+      background: var(--blanco);
     }
 
     .link {
@@ -267,14 +271,14 @@
     /* En pantallas bajas, compactar el conjunto antes de provocar scroll */
     @media (max-height: 850px) and (max-width: 480px) {
       body { padding-top: 8px; padding-bottom: 8px; }
-      .brand-header { aspect-ratio: 3.5 / 1; }
+      .brand-header { aspect-ratio: 3 / 1; }
       .link { padding-top: 0.68rem; padding-bottom: 0.68rem; }
       .brand-footer { padding-top: 0.48rem; padding-bottom: 0.5rem; }
       .brand-footer p { letter-spacing: 0.14em; }
     }
 
     @media (max-height: 700px) and (max-width: 480px) {
-      .brand-header { aspect-ratio: 3.7 / 1; }
+      .brand-header { aspect-ratio: 3.1 / 1; }
       .link { padding-top: 0.48rem; padding-bottom: 0.48rem; }
       .link-icon { width: 36px; height: 36px; }
       .brand-footer { padding-top: 0.38rem; padding-bottom: 0.4rem; }
